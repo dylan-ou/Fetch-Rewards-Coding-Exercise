@@ -12,7 +12,7 @@ import com.example.fetchrewardscodingexercise.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button button, button2, button3, button4;
     public static TextView textView;
 
     @Override
@@ -20,14 +20,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
         textView = (TextView) findViewById(R.id.textView);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GetData getData = new GetData();
-                getData.execute();
+                buttonPress(1);
             }
         });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonPress(2);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonPress(3);
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonPress(4);
+            }
+        });
+    }
+
+    void buttonPress(int num){
+        GetData getData = new GetData();
+        getData.userChoice = num;
+        getData.execute();
     }
 }
