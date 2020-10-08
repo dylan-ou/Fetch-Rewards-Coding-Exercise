@@ -15,6 +15,7 @@ items in the JSON file with the "listId" specified by the button.
 - Information is grouped by "listId" correctly
 - Any lines where "name" equals "" or "null" are omitted from displaying
 - This isn't dynamic enough to support more "listId's" if there were used with other JSON files
+- No support in landscape mode, but that could be easily implemented
 - I noticed that if you group it by "name," it actually misplaces some of the results due to string comparison 
 (e.g. {"id": 28, "listId": 1, "name": "Item 28"} comes after {"id": 276, "listId": 1, "name": "Item 276"}). I'm
 sure it would've made sense if you sorted the numbers that you get from accessing "id" instead of "name." Regardless,
